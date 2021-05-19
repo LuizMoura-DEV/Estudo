@@ -1,0 +1,26 @@
+object frmAula004: TfrmAula004
+  Left = 1002
+  Height = 313
+  Top = 124
+  Width = 346
+  Caption = 'Aula 004'
+  ClientHeight = 313
+  ClientWidth = 346
+  LCLVersion = '2.0.12.0'
+  object btnProcessa: TButton
+    Left = 240
+    Height = 41
+    Top = 264
+    Width = 96
+    Caption = 'Processa'
+    OnClick = btnProcessaClick
+    TabOrder = 0
+  end
+  object Memo1: TMemo
+    Left = 16
+    Height = 251
+    Top = 8
+    Width = 320
+    TabOrder = 1
+  end
+end

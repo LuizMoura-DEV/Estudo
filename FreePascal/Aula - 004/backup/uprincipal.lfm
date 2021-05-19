@@ -1,0 +1,8 @@
+object frmAula004: TfrmAula004
+  Left = 1011
+  Height = 240
+  Top = 154
+  Width = 320
+  Caption = 'Aula 004'
+  LCLVersion = '2.0.12.0'
+end

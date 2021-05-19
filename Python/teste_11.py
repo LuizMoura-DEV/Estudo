@@ -1,0 +1,8 @@
+print('Vamos bricar de \033[0:30:47mcolorir\033[m no Python')
+print('Vamos bricar de \033[0:31:46mcolorir\033[m no Python')
+print('Vamos bricar de \033[1:32:45mcolorir\033[m no Python')
+print('Vamos bricar de \033[1:33:44mcolorir\033[m no Python')
+print('Vamos bricar de \033[4:34:43mcolorir\033[m no Python')
+print('Vamos bricar de \033[4:35:42mcolorir\033[m no Python')
+print('Vamos bricar de \033[7:36:41mcolorir\033[m no Python')
+print('Vamos bricar de \033[7:37:40mcolorir\033[m no Python')
