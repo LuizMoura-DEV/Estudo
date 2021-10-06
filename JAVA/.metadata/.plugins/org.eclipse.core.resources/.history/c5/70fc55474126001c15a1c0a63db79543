@@ -1,0 +1,13 @@
+package fundamentos;
+
+public class Temperatura {
+	
+	public static void main(String[] args) {
+		// (°F - 32) * 5/9 = C°
+		double f = 50;
+		final double X = 32.0;
+		final double Y =  5 / 9.0;
+		double total = (f - X) * Y;
+		System.out.println(total);		
+	}
+}
