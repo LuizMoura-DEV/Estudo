@@ -16,6 +16,11 @@ public class NotacaoPonto {
 				.replace("X", "Gui")
 				.toUpperCase()
 				.concat("!!!");
+		
 		System.out.println(y);
+		
+		// Tipos primitivos não tem o operador ponto "."
+		
+		int a = 3;
 	}
 }
