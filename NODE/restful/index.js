@@ -1,29 +1,16 @@
 const express = require('express');
+const consign = require('consign');
+const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
+
 
 let app = express();
 
-app.get('/',(req, res)=>{    
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+app.use(expressValidator());
 
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    res.end('<h1>Olá</h1>');
-});
-
-app.get('/users', (req, res) =>{    
-
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.json({
-        users:[{
-            name: 'Luiz',
-            email: 'luizmoura.dev@gmail.com',
-            id: 1
-        }]
-
-    });
-
-
-});
+consign().include('routes').include('utils').into(app);
 
 app.listen(3000, '127.0.0.1', ()=>{
 
