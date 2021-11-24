@@ -5,18 +5,34 @@ describe('Cypress basics', ()=>{
         cy.visit('https://www.wcaquino.me/cypress/componentes.html')
         //const title = cy.title()
         //console.log(title)
-        cy.pause()
+        //cy.pause()
 
         cy.title().should('be.equal', 'Campo de Treinamento')
-        cy.title().debug().should('contain', 'Campo')
+        cy.title().should('contain', 'Campo')
         //console.log(title)
 
         cy.title()
             .should('be.equal', 'Campo de Treinamento')
             .and('contain', 'Campo')
 
-        //TODO imprimir o log no console
-        //TODO escrever o log em um campo de texto
+        let syncTitle
+
+        cy.title().then(title =>{
+            console.log(title)
+            cy.get('#formNome').type(title)
+
+            syncTitle = title
+
+        })
+
+        cy.get('[data-cy=dataSobrenome]').then($el =>{
+            cy.wrap($el).type(syncTitle)   
+        })
+
+        cy.get('#elementosForm\\:sugestoes').then($el =>{
+            $el.val(syncTitle)
+        })
+
     })
 
     it('Should find and interact with an element', () =>{
