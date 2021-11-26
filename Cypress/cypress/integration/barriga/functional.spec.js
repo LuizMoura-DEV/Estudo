@@ -5,10 +5,14 @@ import '../../support/commandsContas'
 
 describe('Testes funcionais',()=>{
 
+    after(()=>{
+        cy.clearLocalStorage()
+    })
+
     before(function(){
         cy.visit('https://barrigareact.wcaquino.me')
         cy.fixture('barrigaData').as('user').then(()=>{
-            cy.login(this.user.email, this.user.senha, this.user.nome)     
+            cy.login(this.user.email, this.user.senha)     
         })
         cy.resetApp()
     })
@@ -58,6 +62,7 @@ describe('Testes funcionais',()=>{
             cy.get(loc.MOVIMENTACAO.BTN_MOV).click()
 
             cy.get(loc.MENSAGEM).should('contain', 'sucesso')
+            //cy.wait(1000)
             cy.xpath(loc.EXTRATO.FN_XP_BUSCA_ELEMENTO('Energia','100')).should('exist')
         })
 

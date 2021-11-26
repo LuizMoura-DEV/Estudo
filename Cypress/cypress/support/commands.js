@@ -34,11 +34,13 @@ Cypress.Commands.add('clickAlert', (locator, message)=>{
     })
 })
 
-Cypress.Commands.add('login', (user, senha, nome)=>{
+Cypress.Commands.add('login', (user, senha)=>{
+    cy.visit('https://barrigareact.wcaquino.me/')
     cy.get(loc.LOGIN.USER).type(user)
     cy.get(loc.LOGIN.SENHA).type(senha)
     cy.get(loc.LOGIN.BTN_LOGIN).click() 
-    cy.get(loc.MENSAGEM).should('contain', `Bem vindo, ${nome}!`) 
+    
+    cy.get(loc.MENSAGEM).should('contain', `Bem vindo`) 
 })
 
 Cypress.Commands.add('resetApp', ()=>{
